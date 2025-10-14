@@ -3,22 +3,31 @@
 // Created by Cameron Strachan.
 // For personal and educational use only.
 
+using CalculatorExample.Services;
 using CommunityToolkit.Mvvm.Input;
 
 namespace CalculatorExample.ViewModel;
 
 public partial class MainPageViewModel : BaseViewModel
 {
-    public MainPageViewModel()
+    public MainPageViewModel(ICalculatorService calculatorService, IEntryValidateService entryValidateService)
     {
         Title = "Calculator";
+        this.calculatorService = calculatorService;
+        this.entryValidateService = entryValidateService;
     }
 
-    [ObservableProperty]
-    double number1;
+    private readonly ICalculatorService calculatorService;
+    private readonly IEntryValidateService entryValidateService;
 
     [ObservableProperty]
-    double number2;
+    string? number1;
+
+    [ObservableProperty]
+    string? number2;
+
+    private double _number1;
+    private double _number2;
 
     [ObservableProperty]
     double result;
@@ -26,52 +35,48 @@ public partial class MainPageViewModel : BaseViewModel
     [RelayCommand]
     void Add()
     {
-        Result = Number1 + Number2;
+        _number1 = entryValidateService.ValidateNumber(Number1);
+        _number2 = entryValidateService.ValidateNumber(Number2);
+        Result = calculatorService.Add(_number1, _number2);
     }
 
     [RelayCommand]
     void Subtract()
     {
-        Result = Number1 - Number2;
+        _number1 = entryValidateService.ValidateNumber(Number1);
+        _number2 = entryValidateService.ValidateNumber(Number2);
+        Result = calculatorService.Subtract(_number1, _number2);
     }
 
     [RelayCommand]
     void Multiply()
     {
-        Result = Number1 * Number2;
+        _number1 = entryValidateService.ValidateNumber(Number1);
+        _number2 = entryValidateService.ValidateNumber(Number2);
+        Result = calculatorService.Multiply(_number1, _number2);
     }
 
     [RelayCommand]
     void Divide()
     {
-        if (Number2 != 0)
-        {
-            Result = Number1 / Number2;
-        }
-        else
-        {
-            // Handle division by zero if necessary
-            Result = double.NaN; // or some other value indicating error
-        }
+        _number1 = entryValidateService.ValidateNumber(Number1);
+        _number2 = entryValidateService.ValidateNumber(Number2);
+        Result = calculatorService.Divide(_number1, _number2);
     }
 
     [RelayCommand]
     void Power()
     {
-        Result = Math.Pow(Number1, Number2);
+        _number1 = entryValidateService.ValidateNumber(Number1);
+        _number2 = entryValidateService.ValidateNumber(Number2);
+        Result = calculatorService.Power(_number1, _number2);
     }
 
     [RelayCommand]
     void Root()
     {
-        if (Number2 != 0)
-        {
-            Result = Math.Pow(Number1, 1.0 / Number2);
-        }
-        else
-        {
-            // Handle root of degree zero if necessary
-            Result = double.NaN; // or some other value indicating error
-        }
+        _number1 = entryValidateService.ValidateNumber(Number1);
+        _number2 = entryValidateService.ValidateNumber(Number2);
+        Result = calculatorService.Root(_number1, _number2);
     }
 }

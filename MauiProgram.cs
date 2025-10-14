@@ -24,6 +24,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPage>();
 
         builder.Services.AddSingleton<ICalculatorService, CalculatorService>();
+        builder.Services.AddSingleton<IEntryValidateService, EntryValidateService>();
 
 #if DEBUG
         builder.Logging.AddDebug();
