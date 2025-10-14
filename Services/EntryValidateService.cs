@@ -14,6 +14,11 @@ public class EntryValidateService : IEntryValidateService
             return 0;
         }
 
+        if (Double.IsNaN(double.Parse(input)) || Double.IsInfinity(double.Parse(input)))
+        {
+            throw new InvalidDataException("Input is not a valid number.");
+        }
+
         if (double.TryParse(input, out double number))
         {
             return number;

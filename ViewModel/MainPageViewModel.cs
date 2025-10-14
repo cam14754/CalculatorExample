@@ -35,48 +35,91 @@ public partial class MainPageViewModel : BaseViewModel
     [RelayCommand]
     void Add()
     {
-        _number1 = entryValidateService.ValidateNumber(Number1);
-        _number2 = entryValidateService.ValidateNumber(Number2);
-        Result = calculatorService.Add(_number1, _number2);
+        try
+        {
+            _number1 = entryValidateService.ValidateNumber(Number1);
+            _number2 = entryValidateService.ValidateNumber(Number2);
+            Result = calculatorService.Add(_number1, _number2);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error: {ex.Message}");
+        }
+
     }
 
     [RelayCommand]
     void Subtract()
     {
-        _number1 = entryValidateService.ValidateNumber(Number1);
-        _number2 = entryValidateService.ValidateNumber(Number2);
-        Result = calculatorService.Subtract(_number1, _number2);
+        try
+        {
+            _number1 = entryValidateService.ValidateNumber(Number1);
+            _number2 = entryValidateService.ValidateNumber(Number2);
+            Result = calculatorService.Subtract(_number1, _number2);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error: {ex.Message}");
+        }
     }
 
     [RelayCommand]
     void Multiply()
     {
-        _number1 = entryValidateService.ValidateNumber(Number1);
-        _number2 = entryValidateService.ValidateNumber(Number2);
-        Result = calculatorService.Multiply(_number1, _number2);
+        try
+        {
+            _number1 = entryValidateService.ValidateNumber(Number1);
+            _number2 = entryValidateService.ValidateNumber(Number2);
+            Result = calculatorService.Multiply(_number1, _number2);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error: {ex.Message}");
+        }
     }
 
     [RelayCommand]
     void Divide()
     {
-        _number1 = entryValidateService.ValidateNumber(Number1);
-        _number2 = entryValidateService.ValidateNumber(Number2);
-        Result = calculatorService.Divide(_number1, _number2);
+        try
+        {
+            _number1 = entryValidateService.ValidateNumber(Number1);
+            _number2 = entryValidateService.ValidateNumber(Number2);
+            Result = calculatorService.Divide(_number1, _number2);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error: {ex.Message}");
+        }
     }
 
     [RelayCommand]
     void Power()
     {
-        _number1 = entryValidateService.ValidateNumber(Number1);
-        _number2 = entryValidateService.ValidateNumber(Number2);
-        Result = calculatorService.Power(_number1, _number2);
+        try
+        {
+            _number1 = entryValidateService.ValidateNumber(Number1);
+            _number2 = entryValidateService.ValidateNumber(Number2);
+            Result = calculatorService.Power(_number1, _number2);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error: {ex.Message}");
+        }
     }
 
     [RelayCommand]
     void Root()
     {
-        _number1 = entryValidateService.ValidateNumber(Number1);
-        _number2 = entryValidateService.ValidateNumber(Number2);
-        Result = calculatorService.Root(_number1, _number2);
+        try
+        {
+            _number1 = entryValidateService.ValidateNumber(Number1);
+            _number2 = entryValidateService.ValidateNumber(Number2);
+            Result = calculatorService.Root(_number1, _number2);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error: {ex.Message}");
+        }
     }
 }
