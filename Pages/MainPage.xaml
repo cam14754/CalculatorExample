@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CalculatorExample.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:CalculatorExample.ViewModel"
+    Title="{Binding Title}"
+    x:DataType="viewmodel:MainPageViewModel"
+    BackgroundColor="{Binding BackgroundColor}">
+
+    <Grid ColumnDefinitions="*, *, *" RowDefinitions="*, *, *">
+        <Entry
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{Binding Number1}" />
+        <Entry
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="{Binding Number2}" />
+        <Label
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="{Binding Result}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Command="{Binding AddCommand}"
+            Text="Add" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Command="{Binding SubtractCommand}"
+            Text="Subtract" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Command="{Binding MultiplyCommand}"
+            Text="Multiply" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Command="{Binding DivideCommand}"
+            Text="Divide" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Command="{Binding PowerCommand}"
+            Text="Power" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Command="{Binding RootCommand}"
+            Text="Root" />
+    </Grid>
+
+</ContentPage>
