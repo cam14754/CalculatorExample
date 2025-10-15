@@ -3,8 +3,7 @@
 // Created by Cameron Strachan.
 // For personal and educational use only.
 
-using CalculatorExample.Services;
-using CommunityToolkit.Mvvm.Input;
+
 
 namespace CalculatorExample.ViewModel;
 

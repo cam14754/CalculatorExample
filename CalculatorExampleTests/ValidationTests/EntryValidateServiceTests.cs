@@ -4,8 +4,6 @@ namespace CalculatorExampleTests.ValidationTests;
 
 public class EntryValidateServiceTests
 {
-    private readonly EntryValidateService _service = new();
-
     [Theory]
     [InlineData(null)]
     [InlineData("")]
@@ -16,7 +14,7 @@ public class EntryValidateServiceTests
     [InlineData(" \u00A0 ")] // Non-breaking space
     public void ValidateNumber_NullOrWhitespace_ReturnsZero(string? input)
     {
-        var result = _service.ValidateNumber(input);
+        var result = new EntryValidateService().ValidateNumber(input);
         Assert.Equal(0, result);
     }
 
@@ -29,7 +27,7 @@ public class EntryValidateServiceTests
     [InlineData("-123.456", -123.456d)]
     public void ValidateNumber_ValidNumericStrings_ReturnsParsedDouble(string input, double expected)
     {
-        var result = _service.ValidateNumber(input);
+        var result = new EntryValidateService().ValidateNumber(input);
         Assert.Equal(expected, result);
         result.GetType().Should().Be<double>();
     }
@@ -41,7 +39,7 @@ public class EntryValidateServiceTests
 
     public void ValidateNumber_SpecialFloatingValues_ThrowsInvalidDataException(string input)
     {
-        Assert.Throws<InvalidDataException>(() => _service.ValidateNumber(input));
+        Assert.Throws<InvalidDataException>(() => new EntryValidateService().ValidateNumber(input));
     }
 
     [Theory]
@@ -52,6 +50,6 @@ public class EntryValidateServiceTests
     [InlineData("&#8734;")]
     public void ValidateNumber_InvalidNumericStrings_ThrowsInvalidDataException(string input)
     {
-        Assert.Throws<FormatException>(() => _service.ValidateNumber(input));
+        Assert.Throws<FormatException>(() => new EntryValidateService().ValidateNumber(input));
     }
 }

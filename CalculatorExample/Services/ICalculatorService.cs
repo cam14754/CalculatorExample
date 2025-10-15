@@ -7,10 +7,10 @@ namespace CalculatorExample.Services;
 
 public interface ICalculatorService
 {
-    double Add(double a, double b);
-    double Subtract(double a, double b);
-    double Multiply(double a, double b);
-    double Divide(double a, double b);
-    double Power(double a, double b);
-    double Root(double a, double b);
+    abstract double Add(double a, double b);
+    abstract double Subtract(double a, double b);
+    abstract double Multiply(double a, double b);
+    abstract double Divide(double a, double b);
+    abstract double Power(double a, double b);
+    abstract double Root(double a, double b);
 }
