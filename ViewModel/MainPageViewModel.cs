@@ -43,6 +43,7 @@ public partial class MainPageViewModel : BaseViewModel
         }
         catch (Exception ex)
         {
+            Number1 = string.Empty; Number2 = string.Empty; Result = 0;
             Debug.WriteLine($"Error: {ex.Message}");
         }
 
@@ -59,6 +60,7 @@ public partial class MainPageViewModel : BaseViewModel
         }
         catch (Exception ex)
         {
+            Number1 = string.Empty; Number2 = string.Empty; Result = 0;
             Debug.WriteLine($"Error: {ex.Message}");
         }
     }
@@ -74,6 +76,7 @@ public partial class MainPageViewModel : BaseViewModel
         }
         catch (Exception ex)
         {
+            Number1 = string.Empty; Number2 = string.Empty; Result = 0;
             Debug.WriteLine($"Error: {ex.Message}");
         }
     }
@@ -89,6 +92,7 @@ public partial class MainPageViewModel : BaseViewModel
         }
         catch (Exception ex)
         {
+            Number1 = string.Empty; Number2 = string.Empty; Result = 0;
             Debug.WriteLine($"Error: {ex.Message}");
         }
     }
@@ -104,6 +108,7 @@ public partial class MainPageViewModel : BaseViewModel
         }
         catch (Exception ex)
         {
+            Number1 = string.Empty; Number2 = string.Empty; Result = 0;
             Debug.WriteLine($"Error: {ex.Message}");
         }
     }
@@ -119,6 +124,7 @@ public partial class MainPageViewModel : BaseViewModel
         }
         catch (Exception ex)
         {
+            Number1 = string.Empty; Number2 = string.Empty; Result = 0;
             Debug.WriteLine($"Error: {ex.Message}");
         }
     }
