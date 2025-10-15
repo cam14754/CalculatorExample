@@ -3,8 +3,6 @@
 // Created by Cameron Strachan.
 // For personal and educational use only.
 
-
-
 namespace CalculatorExample.ViewModel;
 
 public partial class MainPageViewModel : BaseViewModel
